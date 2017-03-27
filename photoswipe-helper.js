@@ -13,10 +13,8 @@ var ps = (function($){
         caption;
 
       if( $el.next().is('.wp-caption-text') ) {
-        // image with caption
         caption = $el.next().text();
       } else if( $el.parent().next().is('.wp-caption-text') ) {
-        // gallery icon with caption
         caption = $el.parent().next().text();
       } else {
         caption = $el.attr('title');
@@ -105,7 +103,6 @@ function parseThumbnailElements(gallery, el) {
 			options.showAnimationDuration = 0;
 		}
 
-		// Pass data to PhotoSwipe and initialize it
 		gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 		gallery.listen('beforeChange', function(a,b,c) {
 			color = $(gallery.currItem.el).data('color');
