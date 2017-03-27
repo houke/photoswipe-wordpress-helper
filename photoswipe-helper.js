@@ -1,25 +1,7 @@
 var PhotoSwipe = require('photoswipe/dist/photoswipe.js');
 var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default.js');
 var ps = (function($){
-
-  function parseThumbnailElements(gallery, el) {
-    var elements = $(gallery).find('a[data-size]').has('img'),
-      galleryItems = [],
-      index;
-
-    elements.each(function(i) {
-      var $el = $(this),
-        size = $el.data('size').split('x'),
-        caption;
-
-      if( $el.next().is('.wp-caption-text') ) {
-        caption = $el.next().text();
-      } else if( $el.parent().next().is('.wp-caption-text') ) {
-        caption = $el.parent().next().text();
-      } else {
-        caption = $el.attr('title');
-      }
-function parseThumbnailElements(gallery, el) {
+	function parseThumbnailElements(gallery, el) {
 		var elements = $(gallery).find('a[data-size]').has('img'),
 			galleryItems = [],
 			index;
@@ -34,7 +16,6 @@ function parseThumbnailElements(gallery, el) {
 			if( $el.next().is('.c-post__subtitle') ) {
 				caption = $el.next().text();
 			} else if( $el.parent().next().is('.c-post__subtitle') ) {
-				// gallery icon with caption
 				caption = $el.parent().next().text();
 			} else {
 				caption = $el.attr('title');
