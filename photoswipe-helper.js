@@ -57,9 +57,7 @@ var ps = (function($){
     items = items[0];
 
     options = {
-      index: index,
-      showHideOpacity: true,
-      history: false
+      index: index
     };
 
     if(disableAnimation) {
